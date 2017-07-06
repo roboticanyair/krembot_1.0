@@ -20,7 +20,9 @@ https://github.com/spark/particle-dev
 ## Flashing a single Krembot
 
 ## Flashing multiple Krembots
-1. gcd flash
-2. ./flash_multi.sh <group file> <bin file>
+1. Compile your code in particle-dev (without flashing). This step will create a compiled bin file.
+2. cd flash
+3. ./flash_multi.sh <group file path> <bin file path>
 e.g.
 ./flash_multi.sh group1.txt photon_0.6.2_firmware_1499256083785.bin
+
