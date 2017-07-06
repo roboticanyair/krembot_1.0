@@ -9,7 +9,7 @@ sudo apt-get install -y nodejs
 sudo apt-get install npm
 sudo npm install -g particle-cli
 particle login
----
+```
 
 ? Please enter your email address: robotican.photon@gmail.com
 ? Please enter your password: 123123rR
