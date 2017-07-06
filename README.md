@@ -15,9 +15,11 @@ particle login
 ### particle-dev
 https://github.com/spark/particle-dev
 
-## Compiling code for Krembot
-
-## Flashing a single Krembot
+## Compiling ang flashing code for Krembot
+Use the particle-dev to select required Krembot and compile and flash using the cloud.
+See:
+https://docs.particle.io/guide/tools-and-features/dev/#compiling-code
+https://docs.particle.io/guide/tools-and-features/dev/#flashing-device
 
 ## Flashing multiple Krembots
 1. Compile your code in particle-dev (without flashing). This step will create a compiled bin file.
