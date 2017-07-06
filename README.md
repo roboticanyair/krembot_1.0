@@ -27,9 +27,12 @@ https://docs.particle.io/guide/tools-and-features/dev/#compiling-code
 https://docs.particle.io/guide/tools-and-features/dev/#flashing-device
 
 ## Flashing multiple Krembots
-1. Compile your code in particle-dev (without flashing). This step will create a compiled bin file.
-2. cd flash
-3. ./flash_multi.sh <group file path> <bin file path>
-e.g.
+Compile your code in particle-dev (without flashing). This step will create a compiled bin file.
+```
+cd flash
+./flash_multi.sh <group file path> <bin file path>
+```
+for example:
+```
 ./flash_multi.sh group1.txt ../krembot/photon_0.6.2_firmware_1499256083785.bin
-
+```
