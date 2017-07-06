@@ -17,8 +17,11 @@ https://github.com/spark/particle-dev
 
 ## Compiling ang flashing code for Krembot
 Use the particle-dev to select required Krembot and compile and flash using the cloud.
+
 See:
+
 https://docs.particle.io/guide/tools-and-features/dev/#compiling-code
+
 https://docs.particle.io/guide/tools-and-features/dev/#flashing-device
 
 ## Flashing multiple Krembots
