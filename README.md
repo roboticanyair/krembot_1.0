@@ -1,4 +1,4 @@
-#Krembot
+# Krembot
 
 ## Installation
 
@@ -24,5 +24,5 @@ https://github.com/spark/particle-dev
 2. cd flash
 3. ./flash_multi.sh <group file path> <bin file path>
 e.g.
-./flash_multi.sh group1.txt photon_0.6.2_firmware_1499256083785.bin
+./flash_multi.sh group1.txt ../krembot/photon_0.6.2_firmware_1499256083785.bin
 
