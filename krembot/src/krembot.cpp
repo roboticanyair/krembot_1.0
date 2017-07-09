@@ -4,7 +4,6 @@
 void Krembot::setup(String master_ip, uint16_t port)
 {
   Serial.begin(38400);
-
   Particle.subscribe("spark/", &Krembot::saveMyName, this);
   Particle.publish("spark/device/name");
 
@@ -72,6 +71,8 @@ void Krembot::loop()
     if (!bump_calib_mode_)
       Led.write(0, 0, 0);
   }
+
+
 }
 
 
