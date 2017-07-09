@@ -1,1 +1,1 @@
-Seee [Krembot Wiki](https://github.com/robotican/krembot/wiki).
+See [Krembot Wiki](https://github.com/robotican/krembot/wiki).
