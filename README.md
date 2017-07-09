@@ -1,8 +1,5 @@
 # Krembot
 
-? Please enter your email address: krembot1@gmail.com
-? Please enter your password: 123123rR
-
 ## Installation
 
 These instructions are compatible with an Ubuntu 14.04.
