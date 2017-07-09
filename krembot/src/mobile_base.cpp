@@ -46,31 +46,25 @@ void MobileBase::setMotorDirection(Motor motor, Direction direction)
   }
 }
 
-int8_t MobileBase::mapByteToBaseVal(uint8_t val)
-{
-  return val / 255. * 200 - 100;
-}
 
-bool MobileBase::drive(int8_t linear, int8_t angular)
+bool MobileBase::drive(int8_t linear_spd, int8_t angular_spd)
 {
   //convert x and y to linear and angular speeds
-
-  int8_t linear_spd = mapByteToBaseVal(linear);
-  int8_t angular_spd = mapByteToBaseVal(angular);
+  if ((linear_spd < -100 || linear_spd > 100) ||
+      (angular_spd < -100 || angular_spd > 100))
+    return false;
 
   Serial.printf("linear_spd: %d\n", linear_spd);
   Serial.printf("angular_spd: %d\n", angular_spd);
 
-  int8_t right_offset = mapByteToBaseVal(EEPROM.read(BASE_RIGHT_OFFSET_ADDR));
-  int8_t left_offset = mapByteToBaseVal(EEPROM.read(BASE_LEFT_OFFSET_ADDR));
+  int8_t right_offset = EEPROM.read(BASE_RIGHT_OFFSET_ADDR);
+  int8_t left_offset = EEPROM.read(BASE_LEFT_OFFSET_ADDR);
 
   Serial.printf("right_offset: %d\n", right_offset);
   Serial.printf("left_offset: %d\n", left_offset);
 
+
   digitalWrite(MOTOR_STBY_LEG, HIGH);
-  if ((linear_spd < -100 || linear_spd > 100) ||
-      (angular_spd < -100 || angular_spd > 100))
-    return false;
 
   int linear_scale = int((linear_spd / 100.0) * 255.0);
   int angular_scale = int((angular_spd / 100.0) * 255.0);
