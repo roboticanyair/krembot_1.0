@@ -49,6 +49,6 @@ cd ~/krembot/flash
 ```
 for example:
 ```
-./flash_multi.sh group1.txt ../krembot/photon_0.6.2_firmware_1499256083785.bin
+./flash_multi.sh group_all.txt ../photon_0.6.2_firmware_1499256083785.bin
 ```
 
