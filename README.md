@@ -5,6 +5,8 @@
 
 ## Installation
 
+These instructions are compatible with an Ubuntu 14.04.
+
 ### particle-cli
 ```
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
