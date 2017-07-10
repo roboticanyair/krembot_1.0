@@ -80,9 +80,14 @@ public:
   DacBumpers Bumpers;
   Battery Bat;
   RGBLed Led;
-  //IMUSensor IMU;
-  void setup(String master_ip, uint16_t port = 8000);
-  void loop();
+
+void setup(String master_ip="192.168.2.112", uint16_t port=8000);
+
+  //void setup() {
+  //  setup("192.168.2.112",8000);
+  //}
+
+void loop();
   String getID() { return System.deviceID(); }
   String getName() { return  my_name_; }
 

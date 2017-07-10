@@ -72,8 +72,8 @@ bool MobileBase::drive(int8_t linear_spd, int8_t angular_spd)
   //Serial.print("linear_scale: "); Serial.println(linear_scale);
   //Serial.print("angular_scale: "); Serial.println(angular_scale);
 
-  int left_cmd = linear_scale - angular_scale;
-  int right_cmd = linear_scale + angular_scale;
+  int left_cmd = linear_scale + angular_scale;
+  int right_cmd = linear_scale - angular_scale;
 
   //if not stop command, add offsets
   if (left_cmd != 0)
