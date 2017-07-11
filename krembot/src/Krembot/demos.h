@@ -177,3 +177,23 @@ k->pub_battery();
 
   return low_bat;
 }
+
+
+void demo_loop(Krembot *k){
+  if (!k->Bat.isCharging()) {
+    if (!check_low_bat(k,10)) { //10%
+
+      if (set_color_after_name(k)) {
+
+        escape_obstacles(k);
+
+        catch_red_disease(k);
+
+        heal_by_green(k);
+
+        check_reset_by_bumpers(k); //reset if all 4 bumbers are pressed
+      }
+    }
+  }
+  else k->Base.stop();
+}
