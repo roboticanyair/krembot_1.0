@@ -5,6 +5,7 @@ void Krembot::setup(String master_ip, uint16_t port)
 {
   Serial.begin(38400);
   Particle.subscribe("spark/", &Krembot::saveMyName, this);
+  Particle.subscribe("reset", &Krembot::reset, this);
   Particle.publish("spark/device/name");
 
   //init I2C
@@ -31,6 +32,8 @@ void Krembot::setup(String master_ip, uint16_t port)
   skip_led_gui_cmds_ = false;
   skip_base_gui_cmds_ = false;
   bump_calib_mode_ = false;
+
+  my_name_="";
 }
 
 void Krembot::loop()
@@ -80,6 +83,7 @@ void Krembot::saveMyName(const char *topic, const char *data)
 {
   Serial.println("received " + String(topic) + ": " + String(data));
   my_name_ = String(data);
+
 }
 
 void Krembot::sendWKC(WKCKrembot2PC& wkc_msg)

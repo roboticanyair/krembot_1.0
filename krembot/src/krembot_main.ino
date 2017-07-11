@@ -1,24 +1,33 @@
 
-#include "krembot.h"
+#include "Krembot/krembot.h"
+#include "Krembot/demos.h"
 
-#include "demos.h"
-//declare only one krembot instance in your code
+
 Krembot krembot;
-
-
 
 
 void setup()
 {
 krembot.setup();
-init_dance(&krembot);
-
+//init_dance(&krembot);
 }
 
 
 void loop()
 {
 
+
+
+//Publish event
 //pub_RGBAD("Front RGBAD",krembot.RgbaFront.read(),1000);
+
+if (set_color_after_name(&krembot)) {
+//Escape front obstacles
 escape(&krembot);
+//Red disease
+catch_red_disease(&krembot);
+
+heal_by_green(&krembot);
+}
+
 }

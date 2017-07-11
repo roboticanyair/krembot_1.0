@@ -54,14 +54,14 @@ bool MobileBase::drive(int8_t linear_spd, int8_t angular_spd)
       (angular_spd < -100 || angular_spd > 100))
     return false;
 
-  Serial.printf("linear_spd: %d\n", linear_spd);
-  Serial.printf("angular_spd: %d\n", angular_spd);
+  //Serial.printf("linear_spd: %d\n", linear_spd);
+  //Serial.printf("angular_spd: %d\n", angular_spd);
 
   int8_t right_offset = EEPROM.read(BASE_RIGHT_OFFSET_ADDR);
   int8_t left_offset = EEPROM.read(BASE_LEFT_OFFSET_ADDR);
 
-  Serial.printf("right_offset: %d\n", right_offset);
-  Serial.printf("left_offset: %d\n", left_offset);
+  //Serial.printf("right_offset: %d\n", right_offset);
+//  Serial.printf("left_offset: %d\n", left_offset);
 
 
   digitalWrite(MOTOR_STBY_LEG, HIGH);
