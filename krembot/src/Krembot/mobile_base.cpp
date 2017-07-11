@@ -3,7 +3,7 @@
 
 MobileBase::MobileBase()
 {
-//  Serial.println("initialization engines");
+  //  Serial.println("initialization engines");
   pinMode(LEFT_MOTOR_DIR_LEG1, OUTPUT);
   pinMode(LEFT_MOTOR_DIR_LEG2, OUTPUT);
   pinMode(LEFT_MOTOR_PWM_LEG, OUTPUT);
@@ -51,8 +51,8 @@ bool MobileBase::drive(int8_t linear_spd, int8_t angular_spd)
 {
   //convert x and y to linear and angular speeds
   if ((linear_spd < -100 || linear_spd > 100) ||
-      (angular_spd < -100 || angular_spd > 100))
-    return false;
+  (angular_spd < -100 || angular_spd > 100))
+  return false;
 
   //Serial.printf("linear_spd: %d\n", linear_spd);
   //Serial.printf("angular_spd: %d\n", angular_spd);
@@ -61,7 +61,7 @@ bool MobileBase::drive(int8_t linear_spd, int8_t angular_spd)
   int8_t left_offset = EEPROM.read(BASE_LEFT_OFFSET_ADDR);
 
   //Serial.printf("right_offset: %d\n", right_offset);
-//  Serial.printf("left_offset: %d\n", left_offset);
+  //  Serial.printf("left_offset: %d\n", left_offset);
 
 
   digitalWrite(MOTOR_STBY_LEG, HIGH);
@@ -77,9 +77,9 @@ bool MobileBase::drive(int8_t linear_spd, int8_t angular_spd)
 
   //if not stop command, add offsets
   if (left_cmd != 0)
-    left_cmd += left_offset;
+  left_cmd += left_offset;
   if (right_cmd != 0)
-    right_cmd += right_offset;
+  right_cmd += right_offset;
   //Serial.print("left cmd: "); Serial.println(left_cmd);
   //Serial.print("right cmd: "); Serial.println(right_cmd);
 
@@ -90,14 +90,14 @@ bool MobileBase::drive(int8_t linear_spd, int8_t angular_spd)
   else if (right_cmd<-255) right_cmd = -255;
 
   if (left_cmd > 0)
-    setMotorDirection(Motor::LEFT, Direction::FORWARD);
+  setMotorDirection(Motor::LEFT, Direction::FORWARD);
   else
   {
     setMotorDirection(Motor::LEFT, Direction::BACKWARD);
     left_cmd = -left_cmd;
   }
   if (right_cmd > 0)
-    setMotorDirection(Motor::RIGHT, Direction::FORWARD);
+  setMotorDirection(Motor::RIGHT, Direction::FORWARD);
   else
   {
     setMotorDirection(Motor::RIGHT, Direction::BACKWARD);

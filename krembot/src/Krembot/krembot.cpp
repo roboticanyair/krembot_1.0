@@ -8,6 +8,7 @@ void Krembot::setup(String master_ip, uint16_t port)
   Particle.subscribe("reset", &Krembot::reset, this);
   Particle.publish("spark/device/name");
 
+pub_battery();
   //init I2C
   Wire.begin();
 
