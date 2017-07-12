@@ -1,23 +1,16 @@
 
 #include "Krembot/krembot.h"
-#include "Krembot/demos.h"
 
-
+//Only one instance of krembot object should be declared
 Krembot krembot;
-
 
 void setup()
 {
-//  krembot.setup("192.168.2.104"); //GUI communication
     krembot.setup();
-
 }
 
 
 void loop()
 {
-//  krembot.loop(); //GUI communication
-
- demo_loop(&krembot);
-
+    //your code here
 }
