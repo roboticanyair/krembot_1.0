@@ -46,6 +46,11 @@ void MobileBase::setMotorDirection(Motor motor, Direction direction)
   }
 }
 
+int8_t MobileBase::mapByteToDriveCmd(uint8_t byte_in)
+{
+  return map(byte_in, 0, 255, -100, 100);
+}
+
 
 bool MobileBase::drive(int8_t linear_spd, int8_t angular_spd)
 {

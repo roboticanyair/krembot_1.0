@@ -89,7 +89,7 @@ public:
     }
   }
 
-  void setup(String master_ip="192.168.2.112", uint16_t port=8000);
+  void setup(String master_ip="10.0.0.13", uint16_t port=8000);
 
   //void setup() {
   //  setup("192.168.2.112",8000);

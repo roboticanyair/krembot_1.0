@@ -48,6 +48,8 @@ void WKCKrembot2PC::toBytes(byte bytes_arr[])
 
   bytes_arr[RGBA_REAR_START_INDX + RGBA_PROX_OFFSET] = rgba_rear.Distance;
   bytes_arr[RGBA_REAR_START_INDX + RGBA_RED_OFFSET] = RGBA16TO8(rgba_rear.Red);
+  //Serial.println(rgba_rear.Red);///////////////////////////////////////////////////////////////////
+  //Serial.print("--->"); Serial.println(RGBA16TO8(rgba_rear.Red));//////////////////////////////
   bytes_arr[RGBA_REAR_START_INDX + RGBA_GREEN_OFFSET] = RGBA16TO8(rgba_rear.Green);
   bytes_arr[RGBA_REAR_START_INDX + RGBA_BLUE_OFFSET] = RGBA16TO8(rgba_rear.Blue);
 

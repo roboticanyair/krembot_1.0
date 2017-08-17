@@ -155,7 +155,9 @@ void Krembot::handleWKCFromPC(WKCPC2Krembot wkc_msg)
 
   if (wkc_msg.joy_control)
   {
-    Base.drive(wkc_msg.joy_x, wkc_msg.joy_y);
+    int8_t linear_vel = MobileBase::mapByteToDriveCmd(wkc_msg.joy_x);
+    int8_t angular_vel = MobileBase::mapByteToDriveCmd(wkc_msg.joy_y);
+    Base.drive(linear_vel, angular_vel);
     skip_base_gui_cmds_ = false;
   }
   else if (!skip_base_gui_cmds_)

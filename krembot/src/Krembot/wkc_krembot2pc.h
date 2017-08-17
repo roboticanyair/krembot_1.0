@@ -82,7 +82,7 @@
 
 #define MSG_SIZE ID_START_INDX + ID_SIZE //size bytes arr
 
-#define RGBA16TO8(val) (uint8_t)(val / 37889.0 * 255.0)
+#define RGBA16TO8(val) (uint8_t)(val / 300.0 * 255.0) //TODO: DELETE THIS//////////////////////////
 
 class WKCKrembot2PC
 {
@@ -109,6 +109,10 @@ public:
 
   void toBytes(byte bytes_arr[]);
   uint16_t size();
+  uint8_t map16RGBTo8RGB(uint16_t val)
+  {
+    return (uint8_t)(val / 300.0 * 255.0);
+  }
 };
 
 #endif

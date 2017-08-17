@@ -12,5 +12,6 @@ void setup()
 
 void loop()
 {
+  krembot.loop();
     //your code here
 }
