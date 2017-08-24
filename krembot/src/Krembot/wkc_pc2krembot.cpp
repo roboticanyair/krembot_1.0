@@ -15,6 +15,10 @@ void WKCPC2Krembot::fromBytes(byte bytes_arr[])
                                            BASE_OFFSET_BIT);
   bumps_calib = BitConverter::getBitInByte(bytes_arr[FLAGS_INDX],
                                           BUMPS_CALIB_BIT);
+  linear_vel_positive = BitConverter::getBitInByte(bytes_arr[FLAGS_INDX],
+                                                   LINEAR_VEL_POSITIVE);
+  angular_vel_positive = BitConverter::getBitInByte(bytes_arr[FLAGS_INDX],
+                                                    ANGULAR_VEL_POSITIVE);
 
   //extract joystick axes
   joy_x = (uint8_t)bytes_arr[JOY_X_INDX];
@@ -36,6 +40,8 @@ void WKCPC2Krembot::print()
   Serial.printf("data_req?: %d\n", data_req);
   Serial.printf("toggle_led?: %d\n", toggle_led);
   Serial.printf("joy_control?: %d\n", joy_control);
+  Serial.printf("linear_vel_positive?: %d\n", linear_vel_positive);
+  Serial.printf("angular_vel_positive?: %d\n", angular_vel_positive);
   Serial.printf("base_offset?: %d\n", base_offset);
   Serial.printf("joy_x: %d\n", joy_x);
   Serial.printf("joy_y: %d\n", joy_y);

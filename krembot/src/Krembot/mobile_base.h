@@ -25,7 +25,6 @@ public:
   bool drive(int8_t linear_spd, int8_t angular_spd);
   void standby();
   void stop();
-  static int8_t mapByteToDriveCmd(uint8_t byte_in);
 };
 
 #endif
